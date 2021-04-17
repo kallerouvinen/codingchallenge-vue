@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <Header />
     <router-link to="/">Go to Product View</router-link>
-    <router-link to="/cart">Go to Cart</router-link>
     <router-link to="/product">Go to Product Details</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
+
 export default {
   name: "App",
   components: {
+    Header,
   },
 };
 </script>
