@@ -1,18 +1,31 @@
 <template>
-  <div></div>
+  <ul>
+    <ProductCard v-for="i in items" v-bind:key="i.id" v-bind:item="i" />
+  </ul>
 </template>
 
 <script>
+import { mapState } from "vuex";
+import ProductCard from "../components/ProductCard.vue";
+
 export default {
   name: "ProductList",
-  components: {},
+  components: {
+    ProductCard,
+  },
+  computed: mapState({
+    items: (state) => state.items,
+  }),
 };
 </script>
 
 <style scoped>
-div {
+ul {
   display: flex;
   flex: 1;
-  background-color: tomato;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 16px 8px;
 }
 </style>
