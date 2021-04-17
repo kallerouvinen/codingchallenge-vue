@@ -1,19 +1,21 @@
 <template>
   <div id="app">
     <Header />
-    <div class="container">
+    <Container>
       <router-view></router-view>
-    </div>
+    </Container>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Container from "./components/Container.vue";
 
 export default {
   name: "App",
   components: {
     Header,
+    Container,
   },
 };
 </script>
@@ -36,10 +38,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  align-self: center;
 }
 </style>
