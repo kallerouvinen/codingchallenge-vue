@@ -2,7 +2,7 @@
   <router-link :to="{ name: 'ProductDetails', params: { id: $props.item.id } }">
     <li>
       <img v-bind:src="$props.item.thumbnailUrl" alt="" />
-      <h4>{{ $props.item.title }}</h4>
+      <h4>{{ title }}</h4>
       <h4>{{ $props.item.price.toFixed(2) }} €</h4>
     </li>
   </router-link>
@@ -13,6 +13,11 @@ export default {
   name: "ProductCard",
   props: {
     item: Object,
+  },
+  computed: {
+    title: function () {
+      return this.item.title.split(" ").slice(0, 2).join(" ");
+    },
   },
 };
 </script>
