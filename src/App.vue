@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header />
-    <router-link to="/">Go to Product View</router-link>
     <router-link to="/product">Go to Product Details</router-link>
     <router-view></router-view>
   </div>
