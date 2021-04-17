@@ -13,9 +13,13 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/", component: ProductList },
-  { path: "/product", component: ProductDetails },
-  { path: "/cart", component: Cart },
+  { name: "ProductList", path: "/", component: ProductList },
+  {
+    name: "ProductDetails",
+    path: "/product/:id",
+    component: ProductDetails,
+  },
+  { name: "Cart", path: "/cart", component: Cart },
 ];
 
 const router = new VueRouter({

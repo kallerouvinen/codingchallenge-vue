@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/product">
+  <router-link :to="{ name: 'ProductDetails', params: { id: $props.item.id } }">
     <li>
       <img v-bind:src="$props.item.thumbnailUrl" alt="" />
       <h4>{{ $props.item.title }}</h4>
