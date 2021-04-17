@@ -12,7 +12,7 @@
         </div>
         <div class="grid-item">
           <div class="price-container">
-            <p>{{ price.toFixed(2) }} €</p>
+            <span class="price">{{ price.toFixed(2) }} €</span>
             <button v-on:click="addToCart(product)">Add to Cart</button>
           </div>
         </div>
@@ -90,6 +90,11 @@ h1 {
   flex: 1;
   flex-direction: column;
   align-items: center;
+}
+.price {
+  font-size: 24px;
+  margin: 16px;
+  font-weight: bold;
 }
 img {
   width: 100%;
