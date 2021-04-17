@@ -13,7 +13,7 @@
         <div class="grid-item">
           <div class="price-container">
             <p>{{ price.toFixed(2) }} €</p>
-            <button v-on:click="addToCart(product.id)">Add to Cart</button>
+            <button v-on:click="addToCart(product)">Add to Cart</button>
           </div>
         </div>
       </div>

@@ -31,8 +31,8 @@ const store = new Vuex.Store({
     cart: [],
   },
   mutations: {
-    addToCart(state, id) {
-      state.cart.push(id);
+    addToCart(state, item) {
+      state.cart.push(item);
     },
     removeFromCart(state, id) {
       console.log("TODO", id);
