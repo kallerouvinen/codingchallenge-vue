@@ -42,17 +42,15 @@ a:hover {
 }
 
 li {
-  width: 200px;
-  height: 300px;
   background-color: #fff;
   box-shadow: 0px 3px 16px 8px rgba(0, 0, 0, 0.2);
-  margin: 16px;
   border-radius: 8px;
   overflow: hidden;
 }
 img {
-  height: 200px;
-  width: 200px;
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
 }
 h4 {
   text-align: left;

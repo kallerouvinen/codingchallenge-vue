@@ -56,12 +56,12 @@ export default {
 
 <style scoped>
 ul {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 32px;
+  align-items: center;
+  margin: 32px;
   list-style-type: none;
-  padding: 16px 8px;
+  padding: 0;
 }
 .skeleton {
   display: flex;
@@ -69,5 +69,20 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 16px 8px;
+}
+@media (min-width: 560px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 800px) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1040px) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 </style>
