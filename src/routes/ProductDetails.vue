@@ -2,7 +2,7 @@
   <div class="container">
     <div v-if="loading" class="loading">Loading...</div>
 
-    <div v-if="error" class="error">{{ error }}</div>
+    <div v-if="error" class="error">Oopsie! Something went wrong!</div>
 
     <div v-if="product" class="content">
       <h1>{{ product.title.split(" ").slice(0, 2).join(" ") }}</h1>
