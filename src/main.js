@@ -3,8 +3,9 @@ import Vuex from "vuex";
 import VueRouter from "vue-router";
 
 import App from "./App.vue";
-import ProductList from "./routes/ProductList";
 import Cart from "./routes/Cart.vue";
+import ProductDetails from "./routes/ProductDetails";
+import ProductList from "./routes/ProductList";
 import { items } from "./mockdata";
 
 Vue.config.productionTip = false;
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/", component: ProductList },
+  { path: "/product", component: ProductDetails },
   { path: "/cart", component: Cart },
 ];
 
