@@ -3,12 +3,14 @@
     <li>
       <img v-bind:src="$props.item.thumbnailUrl" alt="" />
       <h4>{{ title }}</h4>
-      <h4>{{ $props.item.price.toFixed(2) }} €</h4>
+      <h4>{{ price.toFixed(2) }} €</h4>
     </li>
   </router-link>
 </template>
 
 <script>
+import { generatePrice } from "../util";
+
 export default {
   name: "ProductCard",
   props: {
@@ -17,6 +19,9 @@ export default {
   computed: {
     title: function () {
       return this.item.title.split(" ").slice(0, 2).join(" ");
+    },
+    price: function () {
+      return generatePrice(this.item?.title || "");
     },
   },
 };

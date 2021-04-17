@@ -7,14 +7,14 @@
         v-bind:key="i.id"
       />
     </div>
-    <ul v-if="items">
-      <ProductCard v-for="i in items" v-bind:key="i.id" v-bind:item="i" />
+    <ul v-if="products">
+      <ProductCard v-for="i in products" v-bind:key="i.id" v-bind:item="i" />
     </ul>
   </div>
 </template>
 
 <script>
-import { mapMutations, mapState } from "vuex";
+import { mapMutations } from "vuex";
 import ProductCard from "../components/ProductCard.vue";
 import ProductCardSkeleton from "../components/ProductCardSkeleton.vue";
 
@@ -24,9 +24,6 @@ export default {
     ProductCard,
     ProductCardSkeleton,
   },
-  computed: mapState({
-    items: (state) => state.items,
-  }),
   created() {
     this.getProducts();
   },
@@ -34,6 +31,7 @@ export default {
     return {
       error: null,
       loading: false,
+      products: [],
     };
   },
   methods: {
@@ -46,8 +44,7 @@ export default {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/photos?albumId=1"
         );
-        const data = await response.json();
-        this.setItems(data);
+        this.products = await response.json();
       } catch (error) {
         this.error = error.response;
       }

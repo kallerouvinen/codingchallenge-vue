@@ -6,7 +6,6 @@ import App from "./App.vue";
 import Cart from "./routes/Cart.vue";
 import ProductDetails from "./routes/ProductDetails";
 import ProductList from "./routes/ProductList";
-import { generatePrice } from "./util";
 
 Vue.config.productionTip = false;
 Vue.use(Vuex);
@@ -29,14 +28,14 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
   state: {
-    items: [],
+    cart: [],
   },
   mutations: {
-    setItems(state, items) {
-      items.forEach((i) => {
-        i.price = generatePrice(i.title);
-      });
-      state.items = items;
+    addToCart(state, id) {
+      state.cart.push(id);
+    },
+    removeFromCart(state, id) {
+      console.log("TODO", id);
     },
   },
 });

@@ -13,7 +13,7 @@
         <div class="grid-item">
           <div class="price-container">
             <p>{{ price.toFixed(2) }} €</p>
-            <button>Add to Cart</button>
+            <button v-on:click="addToCart(product.id)">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 import { generatePrice } from "../util";
 
 export default {
@@ -42,6 +43,7 @@ export default {
     this.getProduct();
   },
   methods: {
+    ...mapMutations(["addToCart"]),
     async getProduct() {
       this.error = null;
       this.product = null;
