@@ -9,16 +9,11 @@
 </template>
 
 <script>
-// import { mapMutations } from "vuex";
-
 export default {
   name: "ProductCard",
   props: {
     item: Object,
   },
-  // methods: {
-  //   ...mapMutations([""]), TODO
-  // },
 };
 </script>
 
