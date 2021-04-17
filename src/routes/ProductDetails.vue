@@ -13,7 +13,12 @@
         <div class="grid-item">
           <div class="price-container">
             <span class="price">{{ price.toFixed(2) }} €</span>
-            <button v-on:click="addToCart(product)">Add to Cart</button>
+            <button
+              v-on:click="addToCart(product)"
+              v-bind:disabled="addToCartDisabled"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
@@ -35,6 +40,9 @@ export default {
     };
   },
   computed: {
+    addToCartDisabled: function () {
+      return this.$store.state.cart.some((i) => i.id === this.product?.id);
+    },
     price: function () {
       return generatePrice(this.product?.title || "");
     },
@@ -114,6 +122,10 @@ button {
 }
 button:hover {
   transform: scale(1.05);
+}
+button:disabled {
+  transform: scale(1);
+  background: linear-gradient(to right, #eaaec4, #eab4ae);
 }
 button:focus {
   outline: none;
