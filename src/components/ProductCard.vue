@@ -27,10 +27,15 @@ a {
   cursor: pointer;
   text-decoration: none;
   transition: 0.1s all;
+  color: #000;
+}
+a:visited {
+  color: #000;
 }
 a:hover {
   transform: scale(1.05);
 }
+
 li {
   width: 200px;
   height: 300px;
