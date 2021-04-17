@@ -3,7 +3,11 @@
     <img v-bind:src="$props.item.thumbnailUrl" alt="" />
     <div class="info-container">
       <div class="text-row">
-        <h4>{{ title }}</h4>
+        <router-link
+          :to="{ name: 'ProductDetails', params: { id: $props.item.id } }"
+        >
+          <h4>{{ title }}</h4>
+        </router-link>
         <h4>{{ price.toFixed(2) }} €</h4>
       </div>
       <div class="quantity-row">
@@ -42,6 +46,14 @@ export default {
 </script>
 
 <style scoped>
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+a:visited {
+  color: #000;
+}
 li {
   display: flex;
   flex-direction: row;
