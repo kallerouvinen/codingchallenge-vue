@@ -1,6 +1,9 @@
 <template>
   <header>
-    <router-link to="/"><h3>Placeholder</h3></router-link>
+    <router-link class="logo" to="/">
+      <h3>Lorem Ipsum Store</h3>
+      <p>Expensive latin words since 2021</p>
+    </router-link>
     <router-link to="/cart">
       <img src="../assets/shopping-cart.svg" alt="" />
       {{ cartButtonLabel }}
@@ -37,6 +40,18 @@ a {
   align-items: center;
   justify-content: center;
   padding: 8px;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.logo * {
+  margin: 0;
+}
+.logo p {
+  font-size: 10px;
 }
 h3 {
   color: #fff;
