@@ -3,16 +3,20 @@
     <router-link to="/"><h3>Placeholder</h3></router-link>
     <router-link to="/cart">
       <img src="../assets/shopping-cart.svg" alt="" />
-      Cart
+      {{ cartButtonLabel }}
     </router-link>
   </header>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Header",
-  props: {},
-  methods: {},
+  computed: mapState({
+    cartButtonLabel: (state) =>
+      state.cart.length > 0 ? `Cart (${state.cart.length})` : "Cart",
+  }),
 };
 </script>
 
