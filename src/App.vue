@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <router-link to="/">Go to Product View</router-link>
+    <router-link to="/cart">Go to Cart</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
