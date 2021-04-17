@@ -34,8 +34,9 @@ const store = new Vuex.Store({
     addToCart(state, item) {
       state.cart.push(item);
     },
-    removeFromCart(state, id) {
-      console.log("TODO", id);
+    deleteFromCart(state, id) {
+      const index = state.cart.findIndex((i) => i.id === id);
+      state.cart.splice(index, 1);
     },
   },
 });
