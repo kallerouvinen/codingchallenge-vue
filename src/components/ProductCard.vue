@@ -1,7 +1,7 @@
 <template>
   <router-link to="/product">
     <li>
-      <img v-bind:src="$props.item.thumbnailUrl" />
+      <img v-bind:src="$props.item.thumbnailUrl" alt="" />
       <h4>{{ $props.item.title }}</h4>
       <h4>{{ $props.item.price.toFixed(2) }} €</h4>
     </li>

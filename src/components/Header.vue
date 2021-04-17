@@ -2,7 +2,7 @@
   <header>
     <router-link to="/"><h3>Placeholder</h3></router-link>
     <router-link to="/cart">
-      <img src="../assets/shopping-cart.svg" />
+      <img src="../assets/shopping-cart.svg" alt="" />
       Cart
     </router-link>
   </header>
