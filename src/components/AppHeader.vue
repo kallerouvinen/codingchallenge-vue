@@ -15,7 +15,7 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "Header",
+  name: "AppHeader",
   computed: mapState({
     cartButtonLabel: (state) =>
       state.cart.length > 0 ? `Cart (${state.cart.length})` : "Cart",

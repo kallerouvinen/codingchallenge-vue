@@ -13,7 +13,7 @@ import { mapState } from "vuex";
 import CartItem from "../components/CartItem";
 
 export default {
-  name: "Cart",
+  name: "ShoppingCart",
   components: { CartItem },
   computed: mapState({
     cart: (state) => state.cart,

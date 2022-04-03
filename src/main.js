@@ -1,15 +1,11 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import VueRouter from "vue-router";
+import { createApp } from 'vue';
+import { createStore } from "vuex";
+import { createRouter, createWebHistory } from "vue-router";
 
 import App from "./App.vue";
-import Cart from "./routes/Cart.vue";
+import ShoppingCart from "./routes/ShoppingCart.vue";
 import ProductDetails from "./routes/ProductDetails";
 import ProductList from "./routes/ProductList";
-
-Vue.config.productionTip = false;
-Vue.use(Vuex);
-Vue.use(VueRouter);
 
 const routes = [
   { name: "ProductList", path: "/", component: ProductList },
@@ -18,15 +14,15 @@ const routes = [
     path: "/product/:id",
     component: ProductDetails,
   },
-  { name: "Cart", path: "/cart", component: Cart },
+  { name: "ShoppingCart", path: "/cart", component: ShoppingCart },
 ];
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHistory(),
   routes,
-  mode: "history",
 });
 
-const store = new Vuex.Store({
+const store = createStore({
   state: {
     cart: [],
   },
@@ -41,8 +37,10 @@ const store = new Vuex.Store({
   },
 });
 
-new Vue({
-  render: (h) => h(App),
-  router,
-  store,
-}).$mount("#app");
+const app = createApp(App);
+
+app.use(store);
+app.use(router);
+app.config.productionTip = false;
+
+app.mount("#app");
